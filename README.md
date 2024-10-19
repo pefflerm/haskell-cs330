@@ -17,6 +17,28 @@ Multi-line comments are enclosed in curly braces and a single hyphen "{-lcv-}"
 ### Naming
 Haskell is case sensitive. Function names and variables must consist of letters, numbers, and underscores and cannot begin with a number. Data types must start with a capital letter. Camel case is strongly preferred over snake case.
 ### Types
+All variable types are immutable.
+
+```
+x :: Int
+x = 4
+
+z :: Double
+z = 8.9999
+
+bool1 :: Bool
+bool1 = True
+
+char1 :: Char
+char1 = 'A'
+
+string1 :: String
+string1 = "Hello"
+
+--create list of integers--
+numbers :: [Int]
+numbers = [1,2,8,3]
+```
 #### Haskell is statically typed
 ```
 x::Int
@@ -26,6 +48,8 @@ x::String
 x = "Hello"
 --this code will not compile
 ```
+#### Haskell is strongly typed
+#### Haskell is explictly typed
 ### Operators
 ### Binding
 
