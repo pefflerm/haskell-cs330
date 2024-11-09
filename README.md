@@ -8,6 +8,20 @@ Haskell was written by committee from 1987-1990 to be a purely functional langua
 ## Getting Started
 ### Installation
 #### Hello World
+The following code is the simplest way to write a "Hello world" program.
+
+```
+module HelloWorld where
+
+main :: IO ()
+
+main = do
+    putStrLn "Hello World"
+```
+
+This code can be run two different ways. The first is to open a command prompt window and navigate to the directory containing the file. Then type ":l HelloWorld". The HelloWorld module will be loaded. From there, type "main" and the main function will run, printing "Hello World" to the screen.
+
+The second way to run this code is to open the terminal inside VS Code and type "runghc ./HelloWorld". The program will compile and print "Hello World" to the screen.
 #### Comments
 Single line comments are denoted by double hyphens "--lcv"
 
