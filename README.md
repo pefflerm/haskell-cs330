@@ -35,12 +35,11 @@ All variable types are immutable.
 
 The command `:t` can be used in the interpreter to find the type of any expression.
 ```
-ghci> x = 'A'
-ghci> :t x
-x :: Char
+ghci> :t 'A'
+'A' :: Char
 ```
 
-The following code demonstrates some of the most common data types in Haskell.
+The most common data types in Haskell are Int, Double, Bool, Char, and String. Chars store a single Unicode character. Strings are stored as lists of Chars.
 ```
 x :: Int
 x = 4
@@ -50,13 +49,17 @@ y = 8.9999
 
 bool1 :: Bool
 bool1 = True
-
+```
+Chars store a single Unicode character. Chars can be written as the character in single quotes `'!'`, the character's decimal code point `'\033'`, or the hexadecimal code point `'\x0021'`.
+```
 char1 :: Char
 char1 = 'A'
 
 string1 :: String
 string1 = "Hello"
-
+```
+Any of these primitive data types can be stored in a list.
+```
 --create list of integers
 numbers :: [Int]
 numbers = [1,2,8,3]
