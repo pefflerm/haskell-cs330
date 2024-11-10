@@ -75,7 +75,7 @@ Ratio Integers can be imported from Data.Ratio and support exact rational number
 f :: Float
 f = 9.0
 ```
-#### Any of these primitive data types can be stored in a list.
+#### Any of these data types can be stored in a list.
 ```
 --create list of integers
 numbers :: [Int]
@@ -96,6 +96,7 @@ x = "Hello"
 ```
 #### Haskell is strongly typed
 #### Haskell is explictly typed
+The type of each variable must be declared before it is used.
 ### Operators
 ### Binding
 
