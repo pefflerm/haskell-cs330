@@ -39,7 +39,7 @@ ghci> :t 'A'
 'A' :: Char
 ```
 
-The most common data types in Haskell are Int, Double, Bool, Char, and String. Chars store a single Unicode character. Strings are stored as lists of Chars.
+#### The most common data types in Haskell are Int, Double, Bool, Char, and String.
 ```
 x :: Int
 x = 4
@@ -54,11 +54,28 @@ Chars store a single Unicode character. Chars can be written as the character in
 ```
 char1 :: Char
 char1 = 'A'
-
+```
+Strings are stored as lists of Chars.
+```
 string1 :: String
 string1 = "Hello"
 ```
-Any of these primitive data types can be stored in a list.
+#### Other data types include Integer, Ratio Integer, and Float.
+```
+z :: Integer
+z = 54000000
+```
+Int only supports integers between ±536870911, while Integer is unbounded.
+```
+r :: Ratio Integer
+r = 9%4
+```
+Ratio Integers can be imported from Data.Ratio and support exact rational numbers.
+```
+f :: Float
+f = 9.0
+```
+#### Any of these primitive data types can be stored in a list.
 ```
 --create list of integers
 numbers :: [Int]
