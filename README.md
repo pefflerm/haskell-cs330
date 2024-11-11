@@ -47,7 +47,7 @@ ghci> :t 'A'
 'A' :: Char
 ```
 
-#### The most common data types in Haskell are Int, Double, Bool, Char, and String.
+**The most common data types in Haskell are Int, Double, Bool, Char, and String.**
 ```
 x :: Int
 x = 4
@@ -70,7 +70,7 @@ Strings are stored as lists of Chars.
 string1 :: String
 string1 = "Hello"
 ```
-#### Other data types include Integer, Ratio Integer, and Float.
+**Other data types include Integer, Ratio Integer, and Float.**
 ```
 z :: Integer
 z = 54000000
@@ -85,7 +85,7 @@ Ratio Integers can be imported from Data.Ratio and support exact rational number
 f :: Float
 f = 9.0
 ```
-#### Any of these data types can be stored in a list.
+**Any of these data types can be stored in a list.**
 ```
 --create list of integers
 numbers :: [Int]
@@ -95,7 +95,10 @@ numbers = [1,2,8,3]
 strings :: [String]
 strings = ["Hello", "Hi", "Goodbye"]
 ```
-#### Haskell is statically typed
+#### Type Classes
+Num and Fractional are type classes in Haskell that include several types.
+#### Type System
+**Haskell is statically typed**
 The code below will not compile and will return the error "Multiple declarations of 't'.
 ```
 x::Int
@@ -104,7 +107,7 @@ x = 10
 x::String
 x = "Hello"
 ```
-#### Haskell is strongly typed
+**Haskell is strongly typed**
 None of the examples below will compile.
 ```
 addStrings :: String -> String -> String
@@ -116,7 +119,7 @@ addStringNum s1 n1 = s1 + n1
 addIntDouble :: Int -> Double -> Double
 addIntDouble integer double = integer + double
 ```
-#### Haskell is explictly typed by convention
+**Haskell is explictly typed by convention**
 The type system of Haskell can infer types, but it is considered good practice to include explicit type signatures. Either version of the function below will run, but the second is the community standard.
 ```
 getSum num1 num2 = num1 + num2
