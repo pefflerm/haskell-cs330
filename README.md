@@ -19,17 +19,17 @@ main = do
     putStrLn "Hello World"
 ```
 
-This code can be run two different ways. The first is to open a command prompt window and navigate to the directory containing the file. Run the command `ghci`. Once the interpreter is running, type `:l HelloWorld` at the prompt. The HelloWorld module will be loaded. From there, type `main` and the main function will run, printing "Hello World" to the screen.
+This code can be run two different ways. The first is to open a command prompt window and navigate to the directory containing the file. Run the command `ghci`. Once the interpreter is running, type `:l HelloWorld` at the prompt. The HelloWorld module will be loaded. From there, type `main` and hit enter. The main function will run, printing "Hello World" to the screen.
 
 The second way to run this code is to open the folder that contains the file in VS Code. Inside the terminal type `runghc ./HelloWorld` and hit enter. The program will compile and print "Hello World" to the screen.
 #### Comments
-Single line comments are denoted by double hyphens "--lcv"
+Single line comments are denoted by double hyphens. Ex. `--lcv`
 
-Multi-line comments are enclosed in curly braces and a single hyphen "{-lcv-}"
+Multi-line comments are enclosed in curly braces and a single hyphen. Ex. `{-lcv-}`
 
 ## Names, Types, and Binding
 ### Naming
-Haskell is case sensitive. Function names and variables may consist of letters, numbers, and underscores and cannot begin with a number. Data types must start with a capital letter. Camel case is strongly preferred over snake case.
+Haskell is case sensitive. Function names and variables may consist of letters, numbers, and underscores and cannot begin with a number or capital letter. Data types must start with a capital letter. Camel case is strongly preferred over snake case.
 ### Types
 All variable types are immutable.
 
@@ -46,6 +46,9 @@ x = 4
 
 y :: Double
 y = 8.9999
+```
+The syntax for boolean values is `True` and `False`.
+```
 
 bool1 :: Bool
 bool1 = True
@@ -86,17 +89,34 @@ strings :: [String]
 strings = ["Hello", "Hi", "Goodbye"]
 ```
 #### Haskell is statically typed
+The code below will not compile and will return the error "Multiple declarations of 't'.
 ```
 x::Int
 x = 10
 
 x::String
 x = "Hello"
---this code will not compile
 ```
 #### Haskell is strongly typed
-#### Haskell is explictly typed
-The type of each variable must be declared before it is used.
+None of the examples below will compile.
+```
+addStrings :: String -> String -> String
+addStrings s1 s2 = s1 + s2
+
+addStringNum :: String -> Int -> String
+addStringNum s1 n1 = s1 + n1
+
+addIntDouble :: Int -> Double -> Double
+addIntDouble integer double = integer + double
+```
+#### Haskell is explictly typed by convention
+The type system of Haskell can infer types, but it is considered good practice to explicitly declare data types. Either version of the function below will run, but the second is the community standard.
+```
+getSum num1 num2 = num1 + num2
+
+getSum :: Num a => a -> a -> a
+getSum num1 num2 = num1 + num2
+```
 ### Operators
 ### Binding
 
@@ -109,4 +129,8 @@ The type of each variable must be declared before it is used.
 
 [3](https://wiki.haskell.org/Programming_guidelines) Programming Guidelines HaskellWiki
 
-[4](https://www.seas.upenn.edu/~cis1940/spring13/lectures.html) CS 194: Introduction to Haskell University of Pennsylvania
+[4](https://www.seas.upenn.edu/~cis1940/spring13/lectures.html) CS 194: Introduction to Haskell at University of Pennsylvania
+
+[5](https://learning.oreilly.com/library/view/practical-haskell-a/9781484285817/) Practical Haskell: A Real-World Guide to Functional Programmin by Alejandro Serrano Mena
+
+[6](https://www.haskell.org/tutorial/index.html) A Gentle Introduction to Haskell by Paul Hudak, John Peterson, and Joseph Fasel
