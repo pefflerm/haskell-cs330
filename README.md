@@ -25,11 +25,19 @@ The second way to run this code is to open the folder that contains the file in 
 #### Comments
 Single line comments are denoted by double hyphens. Ex. `--lcv`
 
-Multi-line comments are enclosed in curly braces and a single hyphen. Ex. `{-lcv-}`
+Multi-line comments are enclosed in curly braces and two hyphens. Ex. `{-lcv-}`
 
 ## Names, Types, and Binding
 ### Naming
 Haskell is case sensitive. Function names and variables may consist of letters, numbers, and underscores and cannot begin with a number or capital letter. Data types must start with a capital letter. Camel case is strongly preferred over snake case.
+
+The following are keywords and cannot be used as variable or function names.
+```
+case, class, data, deriving, do,
+else, if, import, in, infix, infixl,
+infixr, instance, let, of, module,
+newtype, then, type, where
+```
 ### Types
 All variable types are immutable.
 
@@ -49,7 +57,6 @@ y = 8.9999
 ```
 The syntax for boolean values is `True` and `False`.
 ```
-
 bool1 :: Bool
 bool1 = True
 ```
@@ -110,7 +117,7 @@ addIntDouble :: Int -> Double -> Double
 addIntDouble integer double = integer + double
 ```
 #### Haskell is explictly typed by convention
-The type system of Haskell can infer types, but it is considered good practice to explicitly declare data types. Either version of the function below will run, but the second is the community standard.
+The type system of Haskell can infer types, but it is considered good practice to include explicit type signatures. Either version of the function below will run, but the second is the community standard.
 ```
 getSum num1 num2 = num1 + num2
 
@@ -134,3 +141,5 @@ getSum num1 num2 = num1 + num2
 [5](https://learning.oreilly.com/library/view/practical-haskell-a/9781484285817/) Practical Haskell: A Real-World Guide to Functional Programmin by Alejandro Serrano Mena
 
 [6](https://www.haskell.org/tutorial/index.html) A Gentle Introduction to Haskell by Paul Hudak, John Peterson, and Joseph Fasel
+
+[7](https://hackage.haskell.org/package/CheatSheet-1.5/src/CheatSheet.pdf) Haskell Cheat Sheet by Justin Bailey
