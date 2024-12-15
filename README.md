@@ -5,6 +5,8 @@ Written by Rachel Peffley.
 ## History
 Haskell was written by committee from 1987-1990 to be a purely functional language. At the time there were a number of functional languages, each with little widespread use. Haskell was developed by academics and proponents of functional programming to be a single, widely used functional language.
 
+Haskell is a general purpose language. While its original focus 
+
 ## Getting Started
 ### Installation
 To install Haskell run the following commands as a non-administrative user.
@@ -18,6 +20,8 @@ In the terminal type ```curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.h
 In the PowerShell type ```Set-ExecutionPolicy Bypass -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; try { & ([ScriptBlock]::Create((Invoke-WebRequest https://www.haskell.org/ghcup/sh/bootstrap-haskell.ps1 -UseBasicParsing))) -Interactive -DisableCurl } catch { Write-Error $_ }```
 
 These commands will install the Haskell Toolchain which includes the Glasgow Haskell Compiler (GHC), the haskell-language-server (HLS), cabal-install, and stack.
+
+With HSL, Haskell is supported in a number of text editors including VS Code, NeoVim, and Kate. For this project, I will be using VS Code as it is what I'm most familiar with and has several Haskell extensions.
 
 ### Hello World
 The following code is the simplest way to write a "Hello World" program.
@@ -144,7 +148,7 @@ getSum num1 num2 = num1 + num2
 ### Binding
 
 ## Functions
-The conventional syntax for functions is to write their type signature and then the function definition. The double colon in the type signature should be read as "has type." The final data type in the type signature (the second Float in the example below) is the data type that the function returns. The preceding types (Int and Float) specify the type of the function parameters. The function definition should have the format of nameOfFunction parameter1 parameter2 ... parameterN = ...
+The conventional syntax for functions is to write their type signature and then the function definition. The double colon in the type signature should be read as "has type." The final data type in the type signature (the second Float in the example below) is the data type that the function returns. The preceding types (Int and Float) specify the type of the function parameters. The function definition should have the format of ```nameOfFunction parameter1 parameter2 ... parameterN = ...```
 ```
 price :: Int -> Float -> Float
 price quantity cost  = fromIntegral quantity * cost
@@ -169,3 +173,5 @@ factorial c = c*factorial(c-1)
 [6](https://www.haskell.org/tutorial/index.html) A Gentle Introduction to Haskell by Paul Hudak, John Peterson, and Joseph Fasel
 
 [7](https://hackage.haskell.org/package/CheatSheet-1.5/src/CheatSheet.pdf) Haskell Cheat Sheet by Justin Bailey
+
+[8](https://www.haskell.org/ghcup/install/) Haskell Toolchain Installation
