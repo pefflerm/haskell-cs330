@@ -7,19 +7,29 @@ Haskell was written by committee from 1987-1990 to be a purely functional langua
 
 ## Getting Started
 ### Installation
-#### Hello World
-The following code is the simplest way to write a "Hello world" program.
+To install Haskell run the following commands as a non-administrative user.
+
+**Linux and macOS**
+
+In the terminal type ```curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh```
+
+**Windows**
+
+In the PowerShell type ```Set-ExecutionPolicy Bypass -Scope Process -Force;[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; try { & ([ScriptBlock]::Create((Invoke-WebRequest https://www.haskell.org/ghcup/sh/bootstrap-haskell.ps1 -UseBasicParsing))) -Interactive -DisableCurl } catch { Write-Error $_ }```
+
+These commands will install the Haskell Toolchain which includes the Glasgow Haskell Compiler (GHC), the haskell-language-server (HLS), cabal-install, and stack.
+
+### Hello World
+The following code is the simplest way to write a "Hello World" program.
 
 ```
 module HelloWorld where
 
-main :: IO ()
-
-main = do
-    putStrLn "Hello World"
+sayHello::String
+sayHello = "Hello World"
 ```
 
-This code can be run two different ways. The first is to open a command prompt window and navigate to the directory containing the file. Run the command `ghci`. Once the interpreter is running, type `:l HelloWorld` at the prompt. The HelloWorld module will be loaded. From there, type `main` and hit enter. The main function will run, printing "Hello World" to the screen.
+This code can be run two different ways. The first is to open a command prompt window and navigate to the directory containing the file. Run the command `ghci`. Once the interpreter is running, type `:l HelloWorld` at the prompt. The HelloWorld module will be loaded. From there, type `sayHello` and hit enter. The function will return the string "Hello World".
 
 The second way to run this code is to open the folder that contains the file in VS Code. Inside the terminal type `runghc ./HelloWorld` and hit enter. The program will compile and print "Hello World" to the screen.
 #### Comments
@@ -99,6 +109,7 @@ strings = ["Hello", "Hi", "Goodbye"]
 Num and Fractional are type classes in Haskell that include several types.
 #### Type System
 **Haskell is statically typed**
+
 The code below will not compile and will return the error "Multiple declarations of 't'.
 ```
 x::Int
@@ -108,6 +119,7 @@ x::String
 x = "Hello"
 ```
 **Haskell is strongly typed**
+
 None of the examples below will compile.
 ```
 addStrings :: String -> String -> String
@@ -120,6 +132,7 @@ addIntDouble :: Int -> Double -> Double
 addIntDouble integer double = integer + double
 ```
 **Haskell is explictly typed by convention**
+
 The type system of Haskell can infer types, but it is considered good practice to include explicit type signatures. Either version of the function below will run, but the second is the community standard.
 ```
 getSum num1 num2 = num1 + num2
