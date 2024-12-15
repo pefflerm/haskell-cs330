@@ -144,7 +144,17 @@ getSum num1 num2 = num1 + num2
 ### Binding
 
 ## Functions
-
+The conventional syntax for functions is to write their type signature and then the function definition. The double colon in the type signature should be read as "has type." The final data type in the type signature (the second Float in the example below) is the data type that the function returns. The preceding types (Int and Float) specify the type of the function parameters. The function definition should have the format of nameOfFunction parameter1 parameter2 ... parameterN = ...
+```
+price :: Int -> Float -> Float
+price quantity cost  = fromIntegral quantity * cost
+```
+Haskell supports recursive functions.
+```
+factorial :: Int -> Int
+factorial 0 = 1
+factorial c = c*factorial(c-1)
+```
 ## Sources
 [1](https://learning.oreilly.com/library/view/soar-with-haskell/9781805128458/) Soar With Haskell by Tom Schrijvers
 
