@@ -5,7 +5,9 @@ Written by Rachel Peffley.
 ## History
 Haskell was written by committee from 1987-1990 to be a purely functional language. At the time there were a number of functional languages, each with little widespread use. Haskell was developed by academics and proponents of functional programming to be a single, widely used functional language.
 
-Haskell is a general purpose language. While its original focus 
+Haskell is a general purpose language. While its original focus was on academic research of functional programming, today Haskell is used in a wide variety of industries, including fraud detection and supply chain management.
+
+Besides being a purely functional language, the other main features of Haskell are its type inference, lazy evaluation, and static type system.
 
 ## Getting Started
 ### Installation
@@ -84,17 +86,12 @@ Strings are stored as lists of Chars.
 string1 :: String
 string1 = "Hello"
 ```
-**Other data types include Integer, Ratio Integer, and Float.**
+**Other data types include Integer and Float.**
 ```
 z :: Integer
 z = 54000000
 ```
 Int only supports integers between ±536870911, while Integer is unbounded.
-```
-r :: Ratio Integer
-r = 9%4
-```
-Ratio Integers can be imported from Data.Ratio and support exact rational numbers.
 ```
 f :: Float
 f = 9.0
@@ -145,6 +142,8 @@ getSum :: Num a => a -> a -> a
 getSum num1 num2 = num1 + num2
 ```
 ### Operators
+#### Arithmatic Operators
+#### Logical Operators
 ### Binding
 
 ## Functions
@@ -175,3 +174,5 @@ factorial c = c*factorial(c-1)
 [7](https://hackage.haskell.org/package/CheatSheet-1.5/src/CheatSheet.pdf) Haskell Cheat Sheet by Justin Bailey
 
 [8](https://www.haskell.org/ghcup/install/) Haskell Toolchain Installation
+
+[9](https://youtube.com/playlist?list=PLMWwct3_kb-2xtOziG1gQYMVr691GadR4&feature=shared) Introduction to Functional Programming with Haskell Course
