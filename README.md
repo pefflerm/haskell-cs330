@@ -87,16 +87,18 @@ string1 :: String
 string1 = "Hello"
 ```
 **Other data types include Integer and Float.**
+
+Int only supports integers between ±536870911, while Integer is unbounded and limited only by the memory of your particular computer.
 ```
 z :: Integer
 z = 54000000
-```
-Int only supports integers between ±536870911, while Integer is unbounded.
-```
+
 f :: Float
 f = 9.0
 ```
-**Any of these data types can be stored in a list.**
+**Lists and Tuples**
+
+Lists are written with elements separated by commas and enclosed in brackets. All elements in a list must be of the same type. 
 ```
 --create list of integers
 numbers :: [Int]
@@ -105,6 +107,14 @@ numbers = [1,2,8,3]
 --create list of strings
 strings :: [String]
 strings = ["Hello", "Hi", "Goodbye"]
+```
+Tuples are written with elements separated by commas and enclosed in parentheses. Elements in a tuple can be of different types. Tuples can have up to 15 elements, although it is considered bad practice to use tuples beyond pairs or triplets. The zero tuple or empty tuple is a special type of tuple that contains no elements. It is known as a "unit."
+```
+tuple1 :: (Int, Double, Char)
+tuple1 = (7, 8.8, '$')
+
+zeroTuple :: ()
+zeroTuple = ()
 ```
 #### Type Classes
 Num and Fractional are type classes in Haskell that include several types.
@@ -136,22 +146,37 @@ addIntDouble integer double = integer + double
 
 The type system of Haskell can infer types, but it is considered good practice to include explicit type signatures. Either version of the function below will run, but the second is the community standard.
 ```
-getSum num1 num2 = num1 + num2
+getSum1 num1 num2 = num1 + num2
 
-getSum :: Num a => a -> a -> a
-getSum num1 num2 = num1 + num2
+getSum2 :: Num a => a -> a -> a
+getSum2 num1 num2 = num1 + num2
 ```
 ### Operators
 #### Arithmatic Operators
+The standard arithmatic operators for addition, subtraction, multiplication, and exponentiation are used.
+```
+5.5 + 11.0  --Output: 16.5
+23 - 14  --Output: 9
+4 * 8  --Output: 32
+2 ^ 4  --Output: 16
+```
 #### Logical Operators
 ### Binding
 
 ## Functions
-The conventional syntax for functions is to write their type signature and then the function definition. The double colon in the type signature should be read as "has type." The final data type in the type signature (the second Float in the example below) is the data type that the function returns. The preceding types (Int and Float) specify the type of the function parameters. The function definition should have the format of ```nameOfFunction parameter1 parameter2 ... parameterN = ...```
+The syntax for functions is to write their type signature on one line and the function definition on the line below. 
 ```
-price :: Int -> Float -> Float
+nameOfFunction :: parameter1Type -> parameter2Type -> ... -> parameterNType -> returnType
+nameOfFunction parameter1 parameter2 ... parameterN = ...
+```
+The double colon in the type signature should be read as "has type." The final data type in the type signature is the type of the value that is returned by the function. The preceding N data types are the types of the input parameters.
+
+In the example below the name of the function is "price" and takes in an Int and a Double (named "quantity" and "cost" respectively) as the parameters. The function performs an operation and returns a Double.
+```
+price :: Int -> Double -> Double
 price quantity cost  = fromIntegral quantity * cost
 ```
+
 Haskell supports recursive functions.
 ```
 factorial :: Int -> Int
